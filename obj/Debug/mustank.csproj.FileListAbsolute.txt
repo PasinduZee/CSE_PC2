@@ -1,0 +1,7 @@
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\lk.ac.mrt.cse.pc11\bin\Debug\lk.ac.mrt.cse.pc11.exe.config
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\lk.ac.mrt.cse.pc11\obj\Debug\lk.ac.mrt.cse.pc11.exe
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\lk.ac.mrt.cse.pc11\obj\Debug\lk.ac.mrt.cse.pc11.pdb
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\lk.ac.mrt.cse.pc11\obj\Debug\mustank.csprojResolveAssemblyReference.cache
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\mustank\bin\Debug\lk.ac.mrt.cse.pc11.exe.config
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\mustank\obj\Debug\lk.ac.mrt.cse.pc11.exe
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Server_v3.2.0.1\Client\mustank\obj\Debug\lk.ac.mrt.cse.pc11.pdb
