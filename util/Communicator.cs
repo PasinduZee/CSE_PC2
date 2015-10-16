@@ -143,55 +143,5 @@ namespace mustank.util
             }
         }
 
-        public void BroadCast(object stateInfo)
-        {
-            DataObject dataObj = (DataObject)stateInfo;
-            //Opening the connection
-         //   this.client = new TcpClient(); //before even number bug fix
-            int i = 0;
-            try
-            {
-                for (i = dataObj.ConsiderFrom; i < dataObj.PlayerIPList.Count; i++)
-                {
-                    this.client = new TcpClient(); //the even number bux fix
-
-                    if (dataObj.PlayerPortList[i] == 7000)
-                    {
-                        
-                        this.client.Connect(dataObj.PlayerIPList[i], dataObj.PlayerPortList[i]);
-
-                        if (this.client.Connected)
-                        {
-                            //To write to the socket
-                            this.clientStream = client.GetStream();
-
-                            //Create objects for writing across stream
-                            this.writer = new BinaryWriter(clientStream);
-                            Byte[] tempStr = Encoding.ASCII.GetBytes(dataObj.MSG);
-
-                            //writing to the port                
-                            this.writer.Write(tempStr);
-                            this.writer.Close();
-                            this.clientStream.Close();
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Communication (BROADCASTING) to " +
-                    dataObj.PlayerIPList[i] + " on " + dataObj.PlayerPortList[i] + " Failed! \n " + e.Message);
-                if (i != dataObj.PlayerIPList.Count - 1) //Some other clients should get this message.
-                {
-                    dataObj.ConsiderFrom = i + 1;
-                    this.BroadCast(dataObj);
-                }
-            }
-            finally
-            {   
-                this.client.Close();
-            }
-        }
-
     }
 }
