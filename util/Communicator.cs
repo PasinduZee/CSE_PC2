@@ -7,9 +7,9 @@ using System.Net.Sockets;
 using System.IO;
 using System.Threading;
 
-using mustank.bean;
+using tank_game.bean;
 
-namespace mustank.util
+namespace tank_game.util
 {
     /// <summary>
     /// Is responsible for communication handling
@@ -17,15 +17,15 @@ namespace mustank.util
     class Communicator
     {
         #region "Variables"
-        private NetworkStream clientStream; //Stream - outgoing
-        private TcpClient client; //To talk back to the client
-        private BinaryWriter writer; //To write to the clients
+        private NetworkStream sendStream; //Stream - outgoing
+        private TcpClient server; //talk to the server
+        private BinaryWriter writer; //To write to the servers
 
-        private NetworkStream serverStream; //Stream - incoming        
-        private TcpListener listener; //To listen to the clinets        
-        public string reply = ""; //The message to be written
+        private NetworkStream readStream; //Stream - incoming        
+        private TcpListener listener; //To listen to the server        
+        public string readMsg = ""; //reading msg
         
-        private static Communicator comm = new Communicator();
+        private static Communicator com = new Communicator();
         #endregion
 
         private Communicator()
@@ -34,9 +34,14 @@ namespace mustank.util
 
         public static Communicator GetInstance()
         {
-            return comm;
+            return com;
         }
 
+        public void StartListening()
+        {
+            Thread t = new Thread(ReceiveData);
+            t.Start();
+        }
         public void ReceiveData()
         {
             bool errorOcurred = false;
@@ -44,11 +49,11 @@ namespace mustank.util
             try
             {
                 //Creating listening Socket
-                this.listener = new TcpListener(IPAddress.Parse(Constant.SERVER_IP), Constant.SERVER_PORT);
+                this.listener = new TcpListener(IPAddress.Parse(Constant.SERVER_IP), Constant.CLIENT_PORT);
                 //Starts listening
                 this.listener.Start();
-                //Establish connection upon client request
-                DataObject dataObj;
+                //Establish connection upon server request
+                
                 while (true)
                 {
                     //connection is connected socket
@@ -56,7 +61,7 @@ namespace mustank.util
                     if (connection.Connected)
                     {
                         //To read from socket create NetworkStream object associated with socket
-                        this.serverStream = new NetworkStream(connection);
+                        this.readStream = new NetworkStream(connection);
 
                         SocketAddress sockAdd = connection.RemoteEndPoint.Serialize();
                         string s = connection.RemoteEndPoint.ToString();
@@ -65,26 +70,14 @@ namespace mustank.util
                         int asw = 0;
                         while (asw != -1)
                         {
-                            asw = this.serverStream.ReadByte();
+                            asw = this.readStream.ReadByte();
                             inputStr.Add((Byte)asw);
                         }
 
-                        reply = Encoding.UTF8.GetString(inputStr.ToArray());
-                        this.serverStream.Close();
-                        string ip = s.Substring(0, s.IndexOf(":"));
-                        int port = Constant.CLIENT_PORT;
-                        try
-                        {
-                            string ss = reply.Substring(0, reply.IndexOf(";"));                            
-                            port = Convert.ToInt32(ss);                            
-                        }
-                        catch (Exception)
-                        {                            
-                           port= Constant.CLIENT_PORT;
-                        }
-                        Console.WriteLine(ip + ": " + reply.Substring(0, reply.Length - 1));
-                        dataObj = new DataObject(reply.Substring(0, reply.Length - 1), ip, port);
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(GameEngine.Resolve), (object)dataObj);
+                        readMsg = Encoding.UTF8.GetString(inputStr.ToArray());
+                        Console.WriteLine("\n" + readMsg);                          //read input
+                        this.readStream.Close();
+                       
                     }
                 }
             }
@@ -103,43 +96,40 @@ namespace mustank.util
             }
         }
 
-        public void SendData(object stateInfo)
+        public void SendData(String msg)
         {
-            DataObject dataObj = (DataObject)stateInfo;
-            //Opening the connection
-            this.client = new TcpClient();
+            
+            this.server = new TcpClient();
 
             try
             {
-                if (dataObj.ClientPort == 7000)
                 {
                     
-                    this.client.Connect(dataObj.ClientMachine, dataObj.ClientPort);
-
-                    if (this.client.Connected)
+                    this.server.Connect(Constant.SERVER_IP, Constant.SERVER_PORT);
+                    if (this.server.Connected)
                     {
                         //To write to the socket
-                        this.clientStream = client.GetStream();
+                        this.sendStream = server.GetStream();
 
                         //Create objects for writing across stream
-                        this.writer = new BinaryWriter(clientStream);
-                        Byte[] tempStr = Encoding.ASCII.GetBytes(dataObj.MSG);
+                        this.writer = new BinaryWriter(sendStream);
+                        Byte[] tempStr = Encoding.ASCII.GetBytes(msg);
 
                         //writing to the port                
                         this.writer.Write(tempStr);
-                        Console.WriteLine("\t Data: " + dataObj.MSG + " is written to " + dataObj.ClientMachine + " on " + dataObj.ClientPort);
+                        Console.WriteLine("\t Data: " + msg + " is written to " + Constant.SERVER_IP);
                         this.writer.Close();
-                        this.clientStream.Close();
+                        this.sendStream.Close();
                     }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("Communication (WRITING) to " + dataObj.ClientMachine + " on " + dataObj.ClientPort + "Failed! \n " + e.Message);
+                Console.WriteLine("Communication (WRITING) to " + Constant.SERVER_IP+" Failed! \n " + e.Message);
             }
             finally
             {
-                this.client.Close();
+                this.server.Close();
             }
         }
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mustank", "mustank.csproj", "{F0E3F41F-83C7-4E98-8486-D5A1F58E8C90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tank_game", "tank_game.csproj", "{F0E3F41F-83C7-4E98-8486-D5A1F58E8C90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Support", "..\Support\Support.csproj", "{44AD1D1E-70C2-41A5-85FD-C490B71BCDB4}"
 EndProject

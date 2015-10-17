@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace mustank.bean
+namespace tank_game.bean
 {   
     //Coicider merging with the parent
     class LifePack : MapItem

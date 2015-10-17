@@ -8,8 +8,8 @@
     <ProjectGuid>{F0E3F41F-83C7-4E98-8486-D5A1F58E8C90}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>lk.ac.mrt.cse.p11</RootNamespace>
-    <AssemblyName>lk.ac.mrt.cse.pc11</AssemblyName>
+    <RootNamespace>tank_game</RootNamespace>
+    <AssemblyName>tank_game</AssemblyName>
     <ApplicationIcon>Tank.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -77,8 +77,6 @@
     <Compile Include="bean\Bullet.cs" />
     <Compile Include="bean\DataObject.cs" />
     <Compile Include="bean\LifePack.cs" />
-    <Compile Include="GameEngine.cs" />
-    <Compile Include="GameManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\Communicator.cs" />

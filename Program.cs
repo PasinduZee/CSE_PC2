@@ -6,7 +6,7 @@ using System.Threading;
 using GUI;
 
 
-namespace mustank
+namespace tank_game
 {
     class Program
     {
@@ -14,10 +14,16 @@ namespace mustank
         {
             try
             {
-                GameManager manager = GameManager.GetInstance();
+                //GameManager manager = GameManager.GetInstance();
                 Console.Title = "Console";
                 Console.WriteLine("Server started...");
-                Application.EnableVisualStyles();
+                util.Communicator com = util.Communicator.GetInstance();
+                com.StartListening();
+                com.SendData("JOIN#");
+
+
+
+                /*Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
               //GUI.GUI gui = new GUINormal();
                 GUI.GUII gui = new GUINormal();
@@ -29,6 +35,7 @@ namespace mustank
                     Thread.Sleep(500);
                 }
                 Console.ReadLine();
+                 */
             }
             catch (Exception ex)
             {

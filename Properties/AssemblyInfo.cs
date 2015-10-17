@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("mustank")]
+[assembly: AssemblyTitle("tank_game")]
 [assembly: AssemblyDescription("Tanks - Programming Competition CSE")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Nutshell (Revised by N.H.N.D. de Silva)")]
-[assembly: AssemblyProduct("mustank")]
-[assembly: AssemblyCopyright("Original: Copyright © Nutshell 2009 (Revision: Copyright © N.H.N.D. de Silva 2009 & 2011)")]
-[assembly: AssemblyTrademark("Original: prasnuts(TM) (Revision: [facebook|Twitter]/NisansaDdS) ")]
+[assembly: AssemblyCompany("The Tankiya (G.P.Kanchana ,S.A.I.M.Sudasingha")]
+[assembly: AssemblyProduct("tank_game")]
+[assembly: AssemblyCopyright("Original: Copyright © Tankiya 2016")]
+[assembly: AssemblyTrademark("Original:Tankiya2016(TM) ")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

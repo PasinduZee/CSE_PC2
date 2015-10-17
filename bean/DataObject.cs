@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace mustank.bean
+namespace tank_game.bean
 {
     class DataObject
     {
