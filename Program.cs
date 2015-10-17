@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.Threading;
 using GUI;
 
-
 namespace tank_game
 {
     class Program
@@ -15,11 +14,15 @@ namespace tank_game
             try
             {
                 //GameManager manager = GameManager.GetInstance();
+                
+                
                 Console.Title = "Console";
                 Console.WriteLine("Server started...");
                 util.Communicator com = util.Communicator.GetInstance();
                 com.StartListening();
-                com.SendData("JOIN#");
+                SendCommand sendCommand = SendCommand.getInstance();
+                sendCommand.Join();
+
 
 
 

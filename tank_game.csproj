@@ -79,6 +79,7 @@
     <Compile Include="bean\LifePack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\SendCommand.cs" />
     <Compile Include="util\Communicator.cs" />
   </ItemGroup>
   <ItemGroup>
