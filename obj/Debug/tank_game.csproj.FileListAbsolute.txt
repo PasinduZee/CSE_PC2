@@ -8,3 +8,5 @@ G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game
 G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.exe
 G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.pdb
 G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csprojResolveAssemblyReference.cache
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.Gui.resources
+G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csproj.GenerateResource.Cache

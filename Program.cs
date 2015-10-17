@@ -16,14 +16,12 @@ namespace tank_game
                 //GameManager manager = GameManager.GetInstance();
                 
                 
-                Console.Title = "Console";
+                Console.Title = "Mustank Console";
                 Console.WriteLine("Server started...");
                 util.Communicator com = util.Communicator.GetInstance();
                 com.StartListening();
-                SendCommand sendCommand = SendCommand.getInstance();
-                sendCommand.Join();
-
-
+                Gui gui = new Gui();
+                Application.Run(gui);
 
 
                 /*Application.EnableVisualStyles();

@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui.Designer.cs">
+      <DependentUpon>Gui.cs</DependentUpon>
+    </Compile>
     <Compile Include="bean\BrickWall.cs" />
     <Compile Include="bean\Bullet.cs" />
     <Compile Include="bean\DataObject.cs" />
@@ -124,6 +130,11 @@
       <Project>{44AD1D1E-70C2-41A5-85FD-C490B71BCDB4}</Project>
       <Name>Support</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gui.resx">
+      <DependentUpon>Gui.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
