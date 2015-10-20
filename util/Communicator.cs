@@ -26,17 +26,18 @@ namespace tank_game.util
         public string readMsg = ""; //reading msg
         
         private static Communicator com = new Communicator();
+        private Map map=new Map();
         #endregion
 
         private Communicator()
         {
+            
         }
 
         public static Communicator GetInstance()
         {
             return com;
         }
-
         public void StartListening()
         {
             Thread t = new Thread(ReceiveData);
@@ -75,9 +76,12 @@ namespace tank_game.util
                         }
 
                         readMsg = Encoding.UTF8.GetString(inputStr.ToArray());
-                        Console.WriteLine("\n" + readMsg);                          //read input
+                        //Console.WriteLine("\n" + readMsg);                          //read input
                         this.readStream.Close();
+
+                        map.read(readMsg);
                        
+                      
                     }
                 }
             }
@@ -95,7 +99,6 @@ namespace tank_game.util
                     this.ReceiveData();
             }
         }
-
         public void SendData(String msg)
         {
             

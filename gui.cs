@@ -12,6 +12,7 @@ namespace tank_game
     public partial class Gui : Form
     {
         private SendCommand sc = SendCommand.getInstance();
+       
         public Gui()
         {
             InitializeComponent();

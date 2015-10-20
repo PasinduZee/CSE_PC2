@@ -83,6 +83,7 @@
     <Compile Include="bean\Bullet.cs" />
     <Compile Include="bean\DataObject.cs" />
     <Compile Include="bean\LifePack.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\SendCommand.cs" />
