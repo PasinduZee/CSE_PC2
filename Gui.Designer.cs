@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // AI
+            // Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(284, 49);
-            this.Name = "AI";
+            this.ClientSize = new System.Drawing.Size(284, 176);
+            this.Name = "Gui";
             this.Text = "AI";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AI_KeyUp);
             this.ResumeLayout(false);
