@@ -21,6 +21,8 @@ namespace tank_game
         public void Down() { com.SendData(Constant.DOWN); }
         public void Left() { com.SendData(Constant.LEFT); }
         public void Right() { com.SendData(Constant.RIGHT); }
+        public void Shoot() { com.SendData(Constant.SHOOT); }
+
 
     }
 }

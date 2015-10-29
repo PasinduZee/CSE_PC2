@@ -20,7 +20,8 @@ namespace tank_game
 
         private void AI_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { sc.Up(); }
+            if (e.KeyCode == Keys.Space) { sc.Shoot(); }
+            else if (e.KeyCode == Keys.Up) { sc.Up(); }
             else if (e.KeyCode == Keys.Down) { sc.Down(); }
             else if (e.KeyCode == Keys.Left) { sc.Left(); }
             else if (e.KeyCode == Keys.Right) { sc.Right(); }

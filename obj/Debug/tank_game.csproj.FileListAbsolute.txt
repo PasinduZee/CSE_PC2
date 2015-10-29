@@ -10,3 +10,15 @@ G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game
 G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csprojResolveAssemblyReference.cache
 G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.Gui.resources
 G:\Official\CSE\Semester 4\Programming Challenge\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csproj.GenerateResource.Cache
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\tank_game.exe.config
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.exe
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.pdb
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\tank_game.exe
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\tank_game.pdb
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\AI.dll
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\Bean.dll
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\GUI.dll
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\bin\Debug\Bean.pdb
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csprojResolveAssemblyReference.cache
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.Gui.resources
+G:\Official\CSE\Semester 4\PC\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csproj.GenerateResource.Cache

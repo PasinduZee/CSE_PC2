@@ -58,7 +58,7 @@ namespace tank_game.util
                 while (true)
                 {
                     //connection is connected socket
-                    connection = listener.AcceptSocket();
+                connection = listener.AcceptSocket();
                     if (connection.Connected)
                     {
                         //To read from socket create NetworkStream object associated with socket
