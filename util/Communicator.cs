@@ -7,7 +7,6 @@ using System.Net.Sockets;
 using System.IO;
 using System.Threading;
 
-using tank_game.bean;
 
 namespace tank_game.util
 {
@@ -24,6 +23,10 @@ namespace tank_game.util
         private NetworkStream readStream; //Stream - incoming        
         private TcpListener listener; //To listen to the server        
         public string readMsg = ""; //reading msg
+
+        private String IP = "127.0.0.1";
+        private int SENDING_PORT = 6000;
+        private int RECEIVING_PORT = 7000;
         
         private static Communicator com = new Communicator();
         private Map map=new Map();
@@ -43,6 +46,8 @@ namespace tank_game.util
             Thread t = new Thread(ReceiveData);
             t.Start();
         }
+
+
         public void ReceiveData()
         {
             bool errorOcurred = false;
@@ -50,7 +55,7 @@ namespace tank_game.util
             try
             {
                 //Creating listening Socket
-                this.listener = new TcpListener(IPAddress.Parse(Constant.SERVER_IP), Constant.CLIENT_PORT);
+                this.listener = new TcpListener(IPAddress.Parse(IP), RECEIVING_PORT);
                 //Starts listening
                 this.listener.Start();
                 //Establish connection upon server request
@@ -108,7 +113,7 @@ namespace tank_game.util
             {
                 {
                     
-                    this.server.Connect(Constant.SERVER_IP, Constant.SERVER_PORT);
+                    this.server.Connect(IP, SENDING_PORT);
                     if (this.server.Connected)
                     {
                         //To write to the socket
@@ -120,7 +125,7 @@ namespace tank_game.util
 
                         //writing to the port                
                         this.writer.Write(tempStr);
-                        Console.WriteLine("\t Data: " + msg + " is written to " + Constant.SERVER_IP);
+                        Console.WriteLine("\t Data: " + msg + " is written to " + IP);
                         this.writer.Close();
                         this.sendStream.Close();
                     }
@@ -128,7 +133,7 @@ namespace tank_game.util
             }
             catch (Exception e)
             {
-                Console.WriteLine("Communication (WRITING) to " + Constant.SERVER_IP+" Failed! \n " + e.Message);
+                Console.WriteLine("Communication (WRITING) to " + IP+" Failed! \n " + e.Message);
             }
             finally
             {
