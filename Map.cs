@@ -15,6 +15,9 @@ namespace tank_game
         private int startY;
 
         private String startDirection;
+
+        BasicCommand basicCommandhadler = BasicCommand.getInstance();
+            
         public Map()
         {
             grid = new Char[10, 10];
@@ -116,9 +119,11 @@ namespace tank_game
                 Console.WriteLine(readMsg + "\n");
             }
         }
-        private void readMovingG(String msg)
+        private void readMovingG(String read)
         {
-
+            String readMsg = read.Substring(0, read.Length - 2);
+            basicCommandhadler.Read(read);
+             
         }
     
     

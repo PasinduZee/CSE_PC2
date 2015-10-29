@@ -80,10 +80,14 @@
       <DependentUpon>Gui.cs</DependentUpon>
     </Compile>
     <Compile Include="Map.cs" />
+    <Compile Include="Objects\Brick.cs" />
+    <Compile Include="Objects\MapItem.cs" />
+    <Compile Include="Objects\Water.cs" />
+    <Compile Include="Objects\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\Constant.cs" />
-    <Compile Include="util\SendCommand.cs" />
+    <Compile Include="util\BasicCommand.cs" />
     <Compile Include="util\Communicator.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,12 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Support\Support.csproj">
-      <Project>{44AD1D1E-70C2-41A5-85FD-C490B71BCDB4}</Project>
-      <Name>Support</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Gui.resx">
