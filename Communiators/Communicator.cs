@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading;
 
 
-namespace tank_game.util
+namespace tank_game
 {
     /// <summary>
     /// Is responsible for communication handling
@@ -27,27 +27,30 @@ namespace tank_game.util
         private String IP = "127.0.0.1";
         private int SENDING_PORT = 6000;
         private int RECEIVING_PORT = 7000;
-        
-        private static Communicator com = new Communicator();
-        private Map map=new Map();
+
+        private static Communicator sc = new Communicator();
+        private Map map;
         #endregion
 
         private Communicator()
         {
-            
+         
+        }
+        public static Communicator getInstance()
+        {
+            return sc;
         }
 
-        public static Communicator GetInstance()
-        {
-            return com;
-        }
         public void StartListening()
         {
             Thread t = new Thread(ReceiveData);
             t.Start();
         }
 
-
+        public void setMap(Map map)
+        {
+            this.map = map;
+        }
         public void ReceiveData()
         {
             bool errorOcurred = false;
@@ -125,7 +128,7 @@ namespace tank_game.util
 
                         //writing to the port                
                         this.writer.Write(tempStr);
-                        Console.WriteLine("\t Data: " + msg + " is written to " + IP);
+                        //Console.WriteLine("\t Data: " + msg + " is written to " + IP);
                         this.writer.Close();
                         this.sendStream.Close();
                     }

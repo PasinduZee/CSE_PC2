@@ -13,30 +13,15 @@ namespace tank_game
         {
             try
             {
-                //GameManager manager = GameManager.GetInstance();
-                
-                
+               
                 Console.Title = "Mustank Console";
-                Console.WriteLine("Server started...");
-                util.Communicator com = util.Communicator.GetInstance();
-                com.StartListening();
+                Console.WriteLine("Client started...");
+                Map map = new Map();
                 Gui gui = new Gui();
                 Application.Run(gui);
 
 
-                /*Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-              //GUI.GUI gui = new GUINormal();
-                GUI.GUII gui = new GUINormal();
-                
-                manager.SetGUI(gui);
-                Application.Run((Form)gui);
-                while (!GameEngine.GetInstance().GameFinished) //To keep the thread alive
-                {
-                    Thread.Sleep(500);
-                }
-                Console.ReadLine();
-                 */
+               
             }
             catch (Exception ex)
             {

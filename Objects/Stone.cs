@@ -6,9 +6,11 @@ using System.Text;
 namespace tank_game
 {
     //class for the Brick wall
-    class Water : MapItem
+    class Stone : MapItem
     {
-        public Water()
-        { this.name = "W"; }
+     
+        public Stone()
+        { this.name = "S"; }
+
     }
 }

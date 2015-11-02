@@ -7,42 +7,55 @@ namespace tank_game
 {
     class Map
     {
-        public Char[,] grid{get;set;}
-        public String playerName { get; set; }
+        //The main source
+        public MapItem[,] grid{get;set;}
+        
+        //Array to keep players (only 5 can and player[0]th will be respected client ,other 4 positions=other clients)
+        public Player[] players = new Player[5];
 
-        private int startX;
+        //Number of players in the game (from countable numbers)
+        public int player_count;
 
-        private int startY;
+        public BasicCommandReader basicCommandReader=new BasicCommandReader();
+         //Constructor to initialize map with all null values
 
-        private String startDirection;
-
-        BasicCommand basicCommandhadler = BasicCommand.getInstance();
-            
+        public Communicator com;
+                
         public Map()
         {
-            grid = new Char[10, 10];
+            grid = new MapItem[10, 10];
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    grid[i, j] = 'N';
+                    grid[i, j] = null;
                 }
             }
+            com = Communicator.getInstance();
+            com.setMap(this);
+            com.StartListening();
         }
-        public void printGrid()
+        //print the grid
+
+        public void printMap()
         {
             for (int i = 0; i < 10; i++) 
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Console.Write(grid[j, i]+" ");
+                    if (grid[j, i] != null)
+                    {
+                        Console.Write(grid[j, i].name+" ");
+                    }
+                    else
+                    {
+                        Console.Write("N ");
+                    }
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("\n");
         }
-
-
         public void read(String read)
         {
             String readMsg = read.Substring(0, read.Length - 2);
@@ -62,20 +75,29 @@ namespace tank_game
                 Console.WriteLine("Type G found " + readMsg);
                 readMovingG(readMsg);
             }
-            this.printGrid();
             
         }
         private void readAcceptanceS(String readMsg)
         {
             String[] mainSplit = readMsg.Split(':');
             String[] subSplit = mainSplit[1].Split(';');
-            this.playerName = subSplit[0];
-            this.startX = Int32.Parse(subSplit[1][0]+"");
-            this.startY = Int32.Parse(subSplit[1][2]+"");
-            this.startDirection = (subSplit[2]);
+            player_count += 1;
+            //set the name in constructor
+            players[0] = new Player(subSplit[0]);
 
-            Console.WriteLine("Mustank player no : " + this.playerName);
-            Console.WriteLine("Start Cordinate : " + startX + "," + startY);
+            //set initial cordinates of the player
+            players[0].cordinateX = Int32.Parse(subSplit[1][0]+"");
+            players[0].cordinateY = Int32.Parse(subSplit[1][2]+"");
+
+            //set initial dirctions
+            players[0].direction = Int32.Parse(subSplit[2]+"");
+
+            //update map from player
+            grid[players[0].cordinateX, players[0].cordinateY] = players[0];
+
+            Console.WriteLine("Mustank player no : " + players[0]);
+            Console.WriteLine("Start Cordinate : " + players[0].cordinateX + "," + players[0].cordinateY);
+            Console.WriteLine("Connected to the server");
         }
         private void readInitiationI(String readMsg)
         {
@@ -89,17 +111,18 @@ namespace tank_game
                     String[] cordinates = mainSplit[i].Split(';');
                     if (i == 2)
                     {
+                        //initial positions of bricks
                         foreach (String cordinate in cordinates)
                         {
                             
-                            this.grid[Int32.Parse(cordinate[0]+""), Int32.Parse(cordinate[2]+"")] = 'B';
+                            this.grid[Int32.Parse(cordinate[0]+""), Int32.Parse(cordinate[2]+"")] = new Brick();
                         }
                     }
                     else if (i == 3)
                     {
                         foreach (String cordinate in cordinates)
                         {
-                            this.grid[Int32.Parse(cordinate[0] + ""), Int32.Parse(cordinate[2] + "")] = 'S';
+                            this.grid[Int32.Parse(cordinate[0] + ""), Int32.Parse(cordinate[2] + "")] = new Stone();
                         }
                     }
 
@@ -107,23 +130,28 @@ namespace tank_game
                     {
                         foreach (String cordinate in cordinates)
                         {
-                            this.grid[Int32.Parse(cordinate[0] + ""), Int32.Parse(cordinate[2] + "")] = 'W';
+                            this.grid[Int32.Parse(cordinate[0] + ""), Int32.Parse(cordinate[2] + "")] = new Water();
                         }
                     }
                 }
 
-                this.printGrid();
+                this.printMap();
+                Console.WriteLine("Map printed from type I");
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                Console.WriteLine(readMsg + "\n");
+                Console.WriteLine("readMsg is "+readMsg+  "\n Exception occured "+exception.Message);
             }
         }
         private void readMovingG(String read)
         {
             String readMsg = read.Substring(0, read.Length - 2);
-            basicCommandhadler.Read(read);
-             
+            Boolean b=basicCommandReader.Read(read);
+            if (!b)
+            {
+                //code for handle b
+                Console.WriteLine(readMsg);
+            }
         }
     
     

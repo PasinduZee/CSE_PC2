@@ -6,26 +6,15 @@ using tank_game.util;
 
 namespace tank_game
 {
-    class BasicCommand
-    {
-        private util.Communicator com;
-        private static BasicCommand sc = new BasicCommand();
+    // the class for handle basic 6 sending commands and 8 receiving commands
+    class BasicCommandReader     {
+        private Communicator com;
 
-        private BasicCommand()
+        public BasicCommandReader()
         {
-            com = util.Communicator.GetInstance();
+            com = Communicator.getInstance();
         }
-        public static BasicCommand getInstance(){return sc;}
-
-
-        //Basic send commands
-        public void Join() { com.SendData(Constant.C2S_INITIALREQUEST); }
-        public void Up() { com.SendData(Constant.UP); }
-        public void Down() { com.SendData(Constant.DOWN); }
-        public void Left() { com.SendData(Constant.LEFT); }
-        public void Right() { com.SendData(Constant.RIGHT); }
-        public void Shoot() { com.SendData(Constant.SHOOT); }
-
+        
         
         //Basic receive commands
 

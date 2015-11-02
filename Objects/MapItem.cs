@@ -8,7 +8,7 @@ namespace tank_game
     //parent class for map items
     abstract class MapItem 
     {
-        public int cordinateX { get; set; }
-        public int cordinateY { get; set; }
+        public String name { get; set; }
+        
     }
 }

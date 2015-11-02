@@ -11,13 +11,15 @@ namespace tank_game
 {
     public partial class Gui : Form
     {
-        private SendCommand sc = SendCommand.getInstance();
-       
+        private BasicCommandSender sc;
+   
+
         public Gui()
         {
             InitializeComponent();
+            sc = new BasicCommandSender();
+            
         }
-
         private void AI_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space) { sc.Shoot(); }
