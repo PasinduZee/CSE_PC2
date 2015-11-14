@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace tank_game
 {
-    public partial class Gui : Form
+    partial class Gui : Form
     {
         private BasicCommandSender sc;
-   
+        private Map map;
+        private Player me;
 
-        public Gui()
+        public Gui(Map map)
         {
             InitializeComponent();
             sc = new BasicCommandSender();
-            
+            this.map = map;
+            me = map.players[map.myid];
         }
         private void AI_KeyUp(object sender, KeyEventArgs e)
         {

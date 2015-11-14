@@ -6,7 +6,10 @@ using tank_game.util;
 
 namespace tank_game
 {
-    // the class for handle basic 6 sending commands and 8 receiving commands
+    /// <summary>
+    /// Class for handle basic 8 receiving commands
+    /// </summary>
+
     class BasicCommandReader     {
         private Communicator com;
 

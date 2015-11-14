@@ -6,7 +6,9 @@ using tank_game.util;
 
 namespace tank_game
 {
-    // the class for handle basic 6 sending commands and 8 receiving commands
+    /// <summary>
+    /// Class for handle basic 6 send commands
+    /// </summary>
     class BasicCommandSender
     {
         private Communicator com;
@@ -15,9 +17,7 @@ namespace tank_game
         {
             com = Communicator.getInstance();
         }
-        
-
-        //Basic send commands
+        #region BasicSendCommands
         public void Join() { com.SendData(Constant.C2S_INITIALREQUEST); }
         public void Up() { com.SendData(Constant.UP); }
         public void Down() { com.SendData(Constant.DOWN); }
@@ -25,7 +25,8 @@ namespace tank_game
         public void Right() { com.SendData(Constant.RIGHT); }
         public void Shoot() { com.SendData(Constant.SHOOT); }
 
-        
-     
+        #endregion
+
+
     }
 }

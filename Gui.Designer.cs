@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(284, 176);
+            this.ClientSize = new System.Drawing.Size(284, 122);
             this.Name = "Gui";
             this.Text = "AI";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AI_KeyUp);

@@ -40,17 +40,19 @@ namespace tank_game
         {
             return sc;
         }
-
-        public void StartListening()
+        
+        public void StartListening() //method to start listning of the communicator
         {
             Thread t = new Thread(ReceiveData);
             t.Start();
-        }
+        } 
 
-        public void setMap(Map map)
+        public void setMap(Map map)  //set a pointer to the map 
         {
             this.map = map;
         }
+
+        #region Methods of Receive and Send data 
         public void ReceiveData()
         {
             bool errorOcurred = false;
@@ -143,6 +145,7 @@ namespace tank_game
                 this.server.Close();
             }
         }
-
+        
+        #endregion
     }
 }

@@ -82,6 +82,8 @@
       <DependentUpon>Gui.cs</DependentUpon>
     </Compile>
     <Compile Include="Map.cs" />
+    <Compile Include="Objects\HealthPack.cs" />
+    <Compile Include="Objects\Coin.cs" />
     <Compile Include="Objects\Stone.cs" />
     <Compile Include="Objects\Brick.cs" />
     <Compile Include="Objects\MapItem.cs" />

@@ -17,7 +17,7 @@ namespace tank_game
                 Console.Title = "Mustank Console";
                 Console.WriteLine("Client started...");
                 Map map = new Map();
-                Gui gui = new Gui();
+                Gui gui = new Gui(map);
                 Application.Run(gui);
 
 
