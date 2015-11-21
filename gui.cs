@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace tank_game
 {
@@ -13,14 +14,13 @@ namespace tank_game
     {
         private BasicCommandSender sc;
         private Map map;
-        private Player me;
-
+        
         public Gui(Map map)
         {
             InitializeComponent();
             sc = new BasicCommandSender();
             this.map = map;
-            me = map.players[map.myid];
+           
         }
         private void AI_KeyUp(object sender, KeyEventArgs e)
         {
@@ -30,6 +30,12 @@ namespace tank_game
             else if (e.KeyCode == Keys.Left) { sc.Left(); }
             else if (e.KeyCode == Keys.Right) { sc.Right(); }
             else if (e.KeyCode == Keys.J) { sc.Join(); }
+  
         }
+       
+        
+
+        
+       
     }
 }

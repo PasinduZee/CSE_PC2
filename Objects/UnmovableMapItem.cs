@@ -5,12 +5,9 @@ using System.Text;
 
 namespace tank_game
 {
-    //class for the Brick wall
-    class Stone : UnmovableMapItem
+    //parent class for map items -which a player cannot enter to the cell
+    abstract class UnmovableMapItem:MapItem
     {
-     
-        public Stone()
-        { this.name = "S"; }
-
+       
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //class for the HealthPack
-    class HealthPack : MapItem
+    class HealthPack : MovableMapItem
     {
         public int x_cordinate { get; set; }
         public int y_cordinate { get; set; }
@@ -21,8 +21,8 @@ namespace tank_game
         }
         public bool timer_update()
         {
-            left_time -= 1;
-            if (left_time == 0)
+            left_time -= 1000;
+            if (left_time <= 0)
             { return true; }
             return false;
         }
