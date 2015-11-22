@@ -29,8 +29,9 @@ namespace tank_game
             else if (e.KeyCode == Keys.Down) { sc.Down(); }
             else if (e.KeyCode == Keys.Left) { sc.Left(); }
             else if (e.KeyCode == Keys.Right) { sc.Right(); }
-            else if (e.KeyCode == Keys.J) { sc.Join(); }
-  
+            else if (e.KeyCode == Keys.J) { sc.Join(); }                            //Join to a game
+            else if (e.KeyCode == Keys.C) { map.playingMethod = 0; }                //set playing method to collect coin
+            else if (e.KeyCode == Keys.H) { map.playingMethod = 1; }                //set playing method to collect health pack
         }
        
         

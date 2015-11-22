@@ -10,8 +10,7 @@ namespace tank_game
     {
         public int x_cordinate { get; set; }
         public int y_cordinate { get; set; }
-
-        private int left_time;
+        public int left_time { get; set; }
         public HealthPack(int x,int y,int lt)
         {
             this.name = "H";
