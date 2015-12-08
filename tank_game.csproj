@@ -74,6 +74,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\Battle.cs" />
+    <Compile Include="Algorithm\CollectResources.cs" />
+    <Compile Include="Algorithm\SearchMethods.cs" />
     <Compile Include="Communiators\BasicCommandReader .cs" />
     <Compile Include="Gui.cs">
       <SubType>Form</SubType>
