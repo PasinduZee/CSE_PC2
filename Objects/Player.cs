@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //class for the player
-    class Player : UnmovableMapItem
+    public class Player : UnmovableMapItem
     {
        
         public int direction { get; set; }

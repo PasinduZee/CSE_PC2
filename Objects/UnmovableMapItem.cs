@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //parent class for map items -which a player cannot enter to the cell
-    abstract class UnmovableMapItem:MapItem
+    public abstract class UnmovableMapItem:MapItem
     {
        
     }

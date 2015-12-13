@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //class to implement all battle commands and logic
-    class SearchMethods
+    public class SearchMethods
     {
         private MapItem[,] grid;
         private Player[] players;
