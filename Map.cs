@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace tank_game
 {
-    class Map
+    public class Map
     {
         #region MapVariables
         //Main map which contains data

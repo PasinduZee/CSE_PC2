@@ -9,7 +9,7 @@ namespace tank_game
     /// <summary>
     /// Class for handle basic 6 send commands
     /// </summary>
-    class BasicCommandSender
+    public class BasicCommandSender
     {
         private Communicator com;
 
