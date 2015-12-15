@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //class for the Coin Pile
-    class Coin : MovableMapItem
+    public class Coin : MovableMapItem
     {
         public int x_cordinate { get; set; }
         public int y_cordinate { get; set; }

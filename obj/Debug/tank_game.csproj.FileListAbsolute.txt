@@ -32,3 +32,10 @@ G:\Official\CSE\Semester 4\Programming Challenge II\Code\Tank_Game\Client\tank_g
 G:\Official\CSE\Semester 4\Programming Challenge II\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csprojResolveAssemblyReference.cache
 G:\Official\CSE\Semester 4\Programming Challenge II\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.Gui.resources
 G:\Official\CSE\Semester 4\Programming Challenge II\Code\Tank_Game\Client\tank_game\obj\Debug\tank_game.csproj.GenerateResource.Cache
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\bin\Debug\tank_game.exe.config
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\bin\Debug\tank_game.exe
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\bin\Debug\tank_game.pdb
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\obj\Debug\tank_game.Gui.resources
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\obj\Debug\tank_game.csproj.GenerateResource.Cache
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\obj\Debug\tank_game.exe
+D:\Semester 4\Programming Challenge\Tank Game\tank_game\obj\Debug\tank_game.pdb

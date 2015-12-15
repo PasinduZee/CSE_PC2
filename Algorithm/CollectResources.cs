@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //class to implement all resource finding logic and command
-    class CollectResources
+    public class CollectResources
     {
         private MapItem[,] grid;
         private Player[] players;

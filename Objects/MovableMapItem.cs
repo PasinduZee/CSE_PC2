@@ -6,7 +6,7 @@ using System.Text;
 namespace tank_game
 {
     //parent class for map items- map item which a tank can enter to that cell
-    class MovableMapItem : MapItem
+    public class MovableMapItem : MapItem
     {
         #region bfs search parameters
         public List<int> path { get; set; }  //list which includes the path
