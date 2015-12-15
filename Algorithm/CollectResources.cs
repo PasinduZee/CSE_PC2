@@ -133,7 +133,6 @@ namespace tank_game
             player_count = player_countE;
         }
 
-
         #region usual resource update
         public void updateCoinAqquire()
         {
